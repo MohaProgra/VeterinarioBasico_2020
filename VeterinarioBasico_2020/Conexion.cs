@@ -21,7 +21,12 @@ namespace VeterinarioBasico_2020
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("SELECT * FROM usuario where DNI ='" + DNI + "' AND Contraseña = '" + Contraseña + "'", conexion);
+                    
+                new MySqlCommand("SELECT * FROM usuario where DNI = @DNI AND Contraseña = @Contraseña", conexion);
+
+                consulta.Parameters.AddWithValue("@DNI", DNI);
+                consulta.Parameters.AddWithValue("@Contraseña", Contraseña);
+
 
                 MySqlDataReader resultado = consulta.ExecuteReader();
 
