@@ -19,7 +19,8 @@ namespace VeterinarioBasico_2020
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            VentanaPrincipal v = new VentanaPrincipal();
+            v.Show();
         }
     }
 }
