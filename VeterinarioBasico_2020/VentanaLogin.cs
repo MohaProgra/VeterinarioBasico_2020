@@ -12,15 +12,22 @@ namespace VeterinarioBasico_2020
 {
     public partial class VentanaLogin : Form
     {
+        //Declaro la clase conexión
+
+        Conexion conexion = new Conexion();
+
         public VentanaLogin()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
+
         {
-            VentanaPrincipal v = new VentanaPrincipal();
-            v.Show();
+            String resultado = conexion.loginVeterinario(textBoxDNI.Text, textBoxcontraseña.Text);
+            MessageBox.Show(resultado);
+            //VentanaPrincipal v = new VentanaPrincipal();
+            //v.Show();
         }
     }
 }
